@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+:root {
+    --ui-color: #343434;
+    --primary-color: #D8FF3D;
+    --primary-color-hover: #B4D923;
+    --UI-blue: #3D96FF;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'IBM Plex Sans';
+    color: white;
+    height: 100vh;
+}
+
+section {
+    display: flex;
+    width: 100vw;
+
+    height: 100vh;
+}
+
+
+/* Setting up the page */
+
+aside.controls {
+    width: 300px;
+    height: calc(auto - 60px);
+    background-color: black;
+    padding: 40px 40px 80px 40px;
+
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+aside.controls:hover {
+    overflow: overlay;
+}
+
+::-webkit-scrollbar {
+    background-color: var(--ui-color);
+    width: 8px;
+    padding: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, .32);
+    height: 5vh;
+}
+
+
+div.output {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 24px 0;
+}
+
+
+/* UI control */
+
+hr {
+    border-color: var(--ui-color);
+    margin: 40px 0;
+}
+
+label {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+label.bold_label {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+div.interface {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 24px 0;
+}
+
+div.interface_name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 12px 0;
+}
+
+div.typeface_control {
+    display: flex;
+    align-items: center;
+}
+
+span.value {
+    padding: 2px 4px;
+    border-radius: 4px;
+    background-color: var(--ui-color);
+}
+
+
+
+/* Typography Controls */
+
+
+input[type=range] {
+    -webkit-appearance: none;
+
+    width: 100%;
+    height: 5px;
+    border-radius: 4px;
+    background: var(--ui-color);
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 20px;
+
+    background: var(--primary-color);
+}
+
+input[type=range]:focus,
+input[type=color]:focus,
+input[type=number]:focus {
+    outline: none;
+    cursor: pointer;
+}
+
+
+
+input[type=color],
+input[type=number] {
+    -webkit-appearance: none;
+
+    border: none;
+    width: 40px;
+    height: 22px;
+    border-radius: 4px;
+
+    background: var(--ui-color);
+}
+
+input[type=color] {
+    margin: 0 0 0 8px;
+}
+
+input[type=number] {
+    color: white;
+    width: 35px;
+    height: 24px;
+    padding: 0 0 0 4px;
+}
+
+
+select {
+    appearance: none;
+    border: none;
+
+    color: white;
+    border-radius: 4px;
+    padding: 6px 8px;
+    font-size: 16px;
+
+    background-color: var(--ui-color);
+    background-image: url('assets/chevron.svg');
+    background-repeat: no-repeat;
+    background-position: center right 8px;
+}
+
+select:focus {
+    outline: none;
+}
+
+.typeface {
+    display: grid;
+    grid-template-columns: 70% 1fr;
+    grid-gap: 8px;
+}
+
+
+/* Canvas Controls */
+
+.interface_name.canvas {
+    margin: 0 0 24px 0;
+}
+
+input[type=number] {
+    width: 45px;
+}
+
+.x {
+    margin: 0 8px;
+}
+
+
+/* Export Button */
+
+input[type=submit] {
+    -webkit-appearance: none;
+    border: none;
+    background-color: var(--primary-color);
+    width: 100%;
+    padding: 18px;
+    height: 60px;
+    width: 300px;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+
+    font-family: "IBM Plex Mono";
+    font-size: 18px;
+    font-weight: 600;
+
+    transition: background-color .4s cubic-bezier(.25, .01, .25, 1);
+}
+
+input[type=submit]:hover {
+    background-color: var(--primary-color-hover);
+    cursor: pointer;
+}
+
+input[type=submit]:focus {
+    outline: none;
+}
+
+
+
+/* Poster styling */
+
+div.poster {
+    width: 600px;
+    height: 90vh;
+    padding: 30px;
+
+    display: grid;
+    grid-gap: 18px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+
+    margin: 0 auto;
+    box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.24);
+    border-radius: 2px;
+}
+
+textarea {
+    height: 100%;
+    width: 100%;
+    resize: none;
+    padding: 12px 18px;
+
+    border: 1px solid var(--UI-blue);
+    overflow: hidden;
+}
+
+textarea:hover {
+    overflow-y: overlay;
+}
+
+textarea:focus {
+    outline-color: var(--primary-color);
+}
+
+textarea.header {
+    font-family: "IBM Plex Sans";
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 120%;
+
+    grid-row: 1/3;
+    grid-column: 1/-1;
+}
+
+textarea.body {
+    font-family: "IBM Plex Sans";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+}

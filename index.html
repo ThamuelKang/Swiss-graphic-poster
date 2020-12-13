@@ -3,13 +3,196 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Swiss Graphic Design</title>
 </head>
 
 <body>
-    <h1>Duck</h1>
-    <p>I'm beautiful</p>
+
 </body>
+
+<section>
+    <aside class="controls">
+
+
+        <!-- Layout control -->
+
+        <div>
+            <div class="interface">
+
+                <div class="interface_name">
+                    <label class="bold_label" for="row">Row</label>
+                    <span id="row" class="value">3</span>
+                </div>
+
+                <input name="row" type="range" min=2 max=8>
+            </div>
+
+            <div class="interface">
+
+                <div class="interface_name">
+                    <label class="bold_label" for="column">Column</label>
+                    <span id="column" class="value">3</span>
+                </div>
+
+                <input name="row" type="range" min=2 max=8>
+            </div>
+
+            <hr>
+        </div>
+
+
+
+
+        <div>
+
+            <h2>Typography</h2>
+
+            <!-- header typography -->
+
+            <div class="interface">
+
+                <div class="interface_name">
+                    <label for="header">Header</label>
+
+                    <div class="typeface_control">
+                        <input type="number" name="header" min="8" max="72" value="24">
+                        <input type="color" name="header" value="#000000">
+                    </div>
+                </div>
+
+                <div class="typeface">
+
+                    <select name="typeface">
+                        <option value="volvo">IBM Plex Sans</option>
+                        <option value="saab">Saab</option>
+                        <option value="opel">Opel</option>
+                        <option value="audi">Audi</option>
+                    </select>
+
+                    <select name="font-weight">
+                        <option value="volvo">100</option>
+                        <option value="saab">200</option>
+                        <option value="opel">300</option>
+                        <option value="audi">400</option>
+                        <option value="audi">500</option>
+                        <option value="audi">600</option>
+                        <option value="audi">700</option>
+                        <option value="audi">800</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <!-- body typography -->
+
+            <div class="interface">
+
+                <div class="interface_name">
+                    <label for="header">Body</label>
+
+                    <div class="typeface_control">
+                        <input type="number" name="body" min="8" max="32" value="16">
+                        <input type="color" name="header" value="#000000">
+                    </div>
+                </div>
+
+                <div class="typeface">
+
+                    <select name="typeface">
+                        <option value="volvo">IBM Plex Sans</option>
+                        <option value="saab">Saab</option>
+                        <option value="opel">Opel</option>
+                        <option value="audi">Audi</option>
+                    </select>
+
+                    <select name="font-weight">
+                        <option value="volvo">100</option>
+                        <option value="saab">200</option>
+                        <option value="opel">300</option>
+                        <option value="audi">400</option>
+                        <option value="audi">500</option>
+                        <option value="audi">600</option>
+                        <option value="audi">700</option>
+                        <option value="audi">800</option>
+                    </select>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+
+        <div>
+            <div class="interface_name canvas">
+                <label class="bold_label" for="row">Canvas</label>
+                <input type="color" name="header" value="#ffffff">
+            </div>
+
+            <div class="interface_name">
+                <label for="header">Size</label>
+
+                <div class="typeface_control">
+                    <input type="number" class="canvas_control" name="header" min="8" max="72" value="600">
+                    <p class="x">x</p>
+                    <input type="number" class="canvas_control" name="header" min="8" max="72" value="600">
+                </div>
+            </div>
+
+            <div class="interface_name">
+                <label for="header">Gap</label>
+
+                <div class="typeface_control">
+                    <input type="number" class="canvas_control" name="header" min="8" max="72" value="30">
+                    <p class="x">x</p>
+                    <input type="number" class="canvas_control" name="header" min="8" max="72" value="30">
+                </div>
+            </div>
+
+            <div class="interface_name">
+                <label for="header">Padding</label>
+
+                <div class="typeface_control">
+                    <input type="number" class="canvas_control" name="header" min="8" max="72" value="64">
+                    <p class="x">x</p>
+                    <input type="number" class="canvas_control" name="header" min="8" max="72" value="64">
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+    <input class="export" type="submit" value="Export Poster">
+
+
+
+
+
+
+
+    <div class="output">
+        <div class="poster">
+
+            <textarea name="header" class="header">This is your header</textarea>
+
+            <textarea name="body" class="body">Lorem ipsum I'm a great designer</textarea>
+            <textarea name="body" class="body">Lorem ipsum I'm a great designer</textarea>
+            <textarea name="body" class="body">Lorem ipsum I'm a great designer</textarea>
+
+            <textarea name="body" class="body">Lorem ipsum I'm a great designer</textarea>
+            <textarea name="body" class="body">Lorem ipsum I'm a great designer</textarea>
+            <textarea name="body" class="body">Lorem ipsum I'm a great designer</textarea>
+
+            <textarea name="body" class="body">Lorem ipsum I'm a great designer</textarea>
+            <textarea name="body" class="body">Lorem ipsum I'm a great designer</textarea>
+            <textarea name="body" class="body">Lorem ipsum I'm a great designer</textarea>
+
+        </div>
+    </div>
+</section>
+
+
+<script src="index.js"></script>
 
 </html>
