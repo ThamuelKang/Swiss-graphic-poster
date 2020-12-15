@@ -265,14 +265,14 @@ input[type=submit]:focus {
 div.poster {
   width: 600px;
   height: 90vh;
-  padding: 30px;
+  padding: 18px;
   display: -ms-grid;
   display: grid;
-  grid-gap: 18px;
+  grid-gap: 12px;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
   margin: 0 auto;
   -webkit-box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.24);
           box-shadow: 0px 4px 32px rgba(0, 0, 0, 0.24);
@@ -283,7 +283,7 @@ textarea {
   height: 100%;
   width: 100%;
   resize: none;
-  padding: 12px 18px;
+  padding: 4px 6px;
   border: 1px solid #3D96FF;
   overflow: hidden;
 }
