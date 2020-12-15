@@ -3,7 +3,7 @@
     $primary-color: #D8FF3D;
     $primary-color-hover: #B4D923;
     $UI-blue: #3D96FF;
-
+    $destructive-color: #FF6388;
 
 * {
     box-sizing: border-box;
@@ -98,10 +98,42 @@ div.interface_name {
     margin: 0 0 12px 0;
 }
 
-div.typeface_control {
+div.control {
     display: flex;
     align-items: center;
 }
+
+input[type=submit].layout {
+    -webkit-appearance: none;
+    position: static;
+    width: auto;
+    height: auto;
+    font-family: "IBM Plex Sans";
+    font-size: 16px;
+    font-weight: 400;
+
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: #343434;
+    color: white;
+}
+
+input[type=submit].layout:hover {
+    background-color: $destructive-color;
+    color: black;
+}
+
+input[type=submit].layout:first-child {
+    margin: 0 8px 0 0;
+    background-color: white;
+    color: black;
+}
+
+input[type=submit].layout:first-child:hover {
+    background-color: $UI-blue;
+    color: white;
+}
+
 
 span.value {
     padding: 2px 4px;
@@ -224,7 +256,7 @@ input[type=submit] {
     font-size: 18px;
     font-weight: 600;
 
-    transition: background-color .4s cubic-bezier(.25, .01, .25, 1);
+    transition: background-color .2s cubic-bezier(.25, .01, .25, 1);
 }
 
 input[type=submit]:hover {

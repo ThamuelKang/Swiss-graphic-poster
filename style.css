@@ -103,13 +103,43 @@ div.interface_name {
   margin: 0 0 12px 0;
 }
 
-div.typeface_control {
+div.control {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+input[type=submit].layout {
+  -webkit-appearance: none;
+  position: static;
+  width: auto;
+  height: auto;
+  font-family: "IBM Plex Sans";
+  font-size: 16px;
+  font-weight: 400;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: #343434;
+  color: white;
+}
+
+input[type=submit].layout:hover {
+  background-color: #FF6388;
+  color: black;
+}
+
+input[type=submit].layout:first-child {
+  margin: 0 8px 0 0;
+  background-color: white;
+  color: black;
+}
+
+input[type=submit].layout:first-child:hover {
+  background-color: #3D96FF;
+  color: white;
 }
 
 span.value {
@@ -218,8 +248,8 @@ input[type=submit] {
   font-family: "IBM Plex Mono";
   font-size: 18px;
   font-weight: 600;
-  -webkit-transition: background-color 0.4s cubic-bezier(0.25, 0.01, 0.25, 1);
-  transition: background-color 0.4s cubic-bezier(0.25, 0.01, 0.25, 1);
+  -webkit-transition: background-color 0.2s cubic-bezier(0.25, 0.01, 0.25, 1);
+  transition: background-color 0.2s cubic-bezier(0.25, 0.01, 0.25, 1);
 }
 
 input[type=submit]:hover {
