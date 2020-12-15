@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swiss Graphic Design</title>
 </head>
@@ -23,10 +28,10 @@
 
                 <div class="interface_name">
                     <label class="bold_label" for="row">Row</label>
-                    <span id="row" class="value">3</span>
+                    <span id="row" class="value">5</span>
                 </div>
 
-                <input name="row" type="range" min=2 max=8>
+                <input name="row-slider" type="range" value=5 min=2 max=8>
             </div>
 
             <div class="interface">
@@ -36,7 +41,7 @@
                     <span id="column" class="value">3</span>
                 </div>
 
-                <input name="row" type="range" min=2 max=8>
+                <input name="column-slider" type="range" value=3 min=2 max=8>
             </div>
 
             <hr>
@@ -174,7 +179,7 @@
     <div class="output">
         <div class="poster">
 
-            <textarea name="header" class="header">This is your header</textarea>
+            <textarea name="header" class="header" placeholder="Generate a good-looking poster!"></textarea>
 
             <textarea name="body" class="body">Lorem ipsum I'm a great designer</textarea>
             <textarea name="body" class="body">Lorem ipsum I'm a great designer</textarea>
