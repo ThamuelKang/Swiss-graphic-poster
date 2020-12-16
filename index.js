@@ -11,6 +11,8 @@ const removeTextbox = document.querySelector(`input[value="Remove"]`);
 const header = document.querySelector("textarea.header");
 const body = document.querySelectorAll("textarea.body");
 
+let bodyArray = Array.prototype.slice.call(body);
+
 const headerSize = document.querySelector(`input[name="header-size"]`);
 const bodySize = document.querySelector(`input[name="body-size"]`);
 
@@ -46,16 +48,19 @@ addTextbox.addEventListener("click", function () {
     let textarea = document.createElement("TEXTAREA");
     poster.appendChild(textarea).classList.add("body");
 
+    bodyArray.push(textarea);
+    console.log(bodyArray.length)
+
     poster.firstElementChild.classList.add("header");
     poster.firstElementChild.classList.remove("body");
 })
 
 removeTextbox.addEventListener("click", function () {
     poster.removeChild(poster.lastElementChild);
-    body.length--;
-    console.log(body.length)
-})
 
+    bodyArray.pop();
+    console.log(bodyArray.length);
+})
 
 
 // typography control
@@ -65,9 +70,9 @@ headerSize.addEventListener("input", function () {
 })
 
 bodySize.addEventListener("input", function () {
-    for (i = 0; i < body.length; i++) {
-        body[i].style.fontSize = this.value + "px"
-        console.log(body.length)
+    for (i = 0; i < bodyArray.length; i++) {
+        bodyArray[i].style.fontSize = this.value + "px"
+        console.log(bodyArray.length)
     }
 })
 
@@ -76,8 +81,8 @@ headerColor.addEventListener("input", function () {
 })
 
 bodyColor.addEventListener("input", function () {
-    for (i = 0; i < body.length; i++) {
-        body[i].style.color = this.value;
+    for (i = 0; i < bodyArray.length; i++) {
+        bodyArray[i].style.color = this.value;
     }
 })
 
@@ -93,6 +98,7 @@ function bodyFontWeightChange() {
     for (i = 0; i < body.length; i++) {
         body[i].style.fontWeight = bodyFontWeight.value;
     }
+
 }
 
 function headerTypefaceChange() {
