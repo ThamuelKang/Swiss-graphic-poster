@@ -65,8 +65,8 @@ addTextbox.addEventListener("click", function () {
     bodyArray.push(textarea);
     console.log(bodyArray.length)
 
-    poster.firstElementChild.classList.add("header");
     poster.firstElementChild.classList.remove("body");
+    poster.firstElementChild.classList.add("header");
 })
 
 removeTextbox.addEventListener("click", function () {
