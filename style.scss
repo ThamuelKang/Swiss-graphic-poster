@@ -5,6 +5,8 @@
     $UI-blue: #3D96FF;
     $destructive-color: #FF6388;
 
+    $ease-in-out: cubic-bezier(.25, .01, .25, 1);
+
 * {
     box-sizing: border-box;
 }
@@ -256,7 +258,7 @@ input[type=submit] {
     font-size: 18px;
     font-weight: 600;
 
-    transition: background-color .2s cubic-bezier(.25, .01, .25, 1);
+    transition: background-color .2s $ease-in-out;
 }
 
 input[type=submit]:hover {
@@ -275,10 +277,16 @@ input[type=submit]:focus {
 div.poster {
     width: 600px;
     height: 90vh;
-    padding: 18px;
+
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-right: 18px;
+    padding-left: 18px;
 
     display: grid;
-    grid-gap: 12px;
+    row-gap: 8px;
+    column-gap: 8px;
+
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
 
@@ -292,8 +300,10 @@ textarea {
     width: 100%;
     resize: none;
     padding: 4px 6px;
+    background-color: rgba(0, 0, 0, 0);
 
-    border: 1px solid $UI-blue;
+    outline: 1px solid $UI-blue;
+    border: 0px;
     overflow: hidden;
 }
 
@@ -327,3 +337,74 @@ textarea.body {
 textarea::placeholder {
     color: black;
 }
+
+
+
+// toggle
+
+p.guide {
+    position: relative;
+    text-align: right;
+    color: black;
+    direction: rtl;
+    bottom: 40px;
+    white-space:nowrap;
+}
+
+.switch {
+    position: fixed;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    bottom: 10px;
+    right: 10px;
+    z-index: 100;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid $UI-blue;
+    border-radius: 100px;
+    transition: .2s $ease-in-out;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 3px;
+    bottom: 3px;
+    background-color: $UI-blue;
+    border-radius: 100px;
+
+    transition: .2s $ease-in-out;
+  }
+  
+  input:checked + .slider {
+    background-color: $UI-blue;
+  }
+
+  input:checked ~ .slider:before {
+    background-color: white;
+  }
+  
+  input:focus + .slider {
+    outline: 1px $UI-blue;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  

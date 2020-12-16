@@ -158,16 +158,16 @@
         <div>
             <div class="interface_name canvas">
                 <label class="bold_label" for="row">Canvas</label>
-                <input type="color" name="header" value="#ffffff">
+                <input type="color" name="canvas-color" value="#ffffff">
             </div>
 
             <div class="interface_name">
                 <label for="header">Size</label>
 
                 <div class=" control">
-                    <input type="number" class="canvas_control" name="header" min="8" max="72" value="600">
+                    <input type="number" name="canvas-size-width" min="100" max="3000" value="600">
                     <p class="x">x</p>
-                    <input type="number" class="canvas_control" name="header" min="8" max="72" value="600">
+                    <input type="number" name="canvas-size-height" min="100" max="3000" value="600">
                 </div>
             </div>
 
@@ -175,22 +175,24 @@
                 <label for="header">Gap</label>
 
                 <div class=" control">
-                    <input type="number" class="canvas_control" name="header" min="8" max="72" value="30">
+                    <input type="number" name="canvas-gap-width" min="0" max="200" value="8">
                     <p class="x">x</p>
-                    <input type="number" class="canvas_control" name="header" min="8" max="72" value="30">
+                    <input type="number" name="canvas-gap-height" min="0" max="200" value="8">
                 </div>
             </div>
 
             <div class="interface_name">
                 <label for="header">Padding</label>
 
-                <div class=" control">
-                    <input type="number" class="canvas_control" name="header" min="8" max="72" value="64">
+                <div class="control">
+                    <input type="number" name="canvas-padding-width" min="0" max="200" value="18">
                     <p class="x">x</p>
-                    <input type="number" class="canvas_control" name="header" min="8" max="72" value="64">
+                    <input type="number" name="canvas-padding-height" min="0" max="200" value="18">
                 </div>
             </div>
         </div>
+
+
 
     </aside>
 
@@ -214,9 +216,15 @@
             <textarea class="body">When you are satisfied, click on export</textarea>
             <textarea class="body">To turn off grid, click on Hide Guides</textarea>
             <textarea class="body">Have fun designing! Inspired by Swiss Design</textarea>
-
         </div>
+
+        <label class="switch">
+            <p class="guide">Hide grid</p>
+            <input name="guide" type="checkbox" onclick="sliderChecked()">
+            <span class="slider"></span>
+        </label>
     </div>
+
 </section>
 
 

@@ -26,7 +26,21 @@ const headerFontWeight = document.querySelector(`select[name="header-font-weight
 const bodyFontWeight = document.querySelector(`select[name="body-font-weight"]`);
 
 
+//canvas
+
 const poster = document.querySelector('div.poster');
+
+const canvasColor = document.querySelector(`input[name="canvas-color"]`);
+
+const canvasSizeWidth = document.querySelector(`input[name="canvas-size-width"]`);
+const canvasSizeHeight = document.querySelector(`input[name="canvas-size-height"]`);
+
+const canvasGapWidth = document.querySelector(`input[name="canvas-gap-width"]`);
+const canvasGapHeight = document.querySelector(`input[name="canvas-gap-height"]`);
+
+const canvasPaddingWidth = document.querySelector(`input[name="canvas-padding-width"]`);
+const canvasPaddingHeight = document.querySelector(`input[name="canvas-padding-height"]`);
+
 
 
 
@@ -63,6 +77,7 @@ removeTextbox.addEventListener("click", function () {
 })
 
 
+
 // typography control
 
 headerSize.addEventListener("input", function () {
@@ -86,19 +101,14 @@ bodyColor.addEventListener("input", function () {
     }
 })
 
-// headerFontWeight.addEventListener("change", function () {
-//     header.style.fontWeight = this.value;
-// })
-
 function headerFontWeightChange() {
     header.style.fontWeight = headerFontWeight.value;
 }
 
 function bodyFontWeightChange() {
-    for (i = 0; i < body.length; i++) {
-        body[i].style.fontWeight = bodyFontWeight.value;
+    for (i = 0; i < bodyArray.length; i++) {
+        bodyArray[i].style.fontWeight = bodyFontWeight.value;
     }
-
 }
 
 function headerTypefaceChange() {
@@ -106,7 +116,61 @@ function headerTypefaceChange() {
 }
 
 function bodyTypefaceChange() {
-    for (i = 0; i < body.length; i++) {
-        body[i].style.fontFamily = bodyTypeface.value;
+    for (i = 0; i < bodyArray.length; i++) {
+        bodyArray[i].style.fontFamily = bodyTypeface.value;
+    }
+}
+
+canvasColor.addEventListener("input", function () {
+    poster.style.backgroundColor = this.value;
+})
+
+canvasSizeWidth.addEventListener("input", function () {
+    poster.style.width = this.value + "px";
+})
+
+canvasSizeHeight.addEventListener("input", function () {
+    poster.style.height = this.value + "px";
+})
+
+canvasGapWidth.addEventListener("input", function () {
+    poster.style.columnGap = this.value + "px";
+})
+
+canvasGapHeight.addEventListener("input", function () {
+    poster.style.rowGap = this.value + "px";
+})
+
+canvasPaddingWidth.addEventListener("input", function () {
+    poster.style.paddingRight = this.value + "px";
+    poster.style.paddingLeft = this.value + "px";
+})
+
+canvasPaddingHeight.addEventListener("input", function () {
+    poster.style.paddingTop = this.value + "px";
+    poster.style.paddingBottom = this.value + "px";
+})
+
+
+//hiding guides 
+
+function sliderChecked() {
+    const slider = document.querySelector(`input[name="guide"]`);
+    const sliderParagraph = document.querySelector("p.guide");
+
+    const textarea = document.querySelectorAll("textarea");
+
+    if (slider.checked == true) {
+
+        for (i = 0; i < textarea.length; i++) {
+            textarea[i].style.outlineWidth = 0 + "px"
+        }
+        sliderParagraph.innerHTML = "Show guides"
+
+    } else {
+        sliderParagraph.innerHTML = "Hide guides"
+        for (i = 0; i < textarea.length; i++) {
+            textarea[i].style.outlineWidth = 1 + "px"
+        }
     }
 }
