@@ -28,7 +28,7 @@ const bodyFontWeight = document.querySelector(`select[name="body-font-weight"]`)
 
 //canvas
 
-const poster = document.querySelector('div.poster');
+const poster = document.querySelector('.poster');
 
 const canvasColor = document.querySelector(`input[name="canvas-color"]`);
 
@@ -42,6 +42,9 @@ const canvasPaddingWidth = document.querySelector(`input[name="canvas-padding-wi
 const canvasPaddingHeight = document.querySelector(`input[name="canvas-padding-height"]`);
 
 
+//export
+
+const exportButton = document.querySelector(".export");
 
 
 
@@ -174,3 +177,20 @@ function sliderChecked() {
         }
     }
 }
+
+
+//html2canvas
+
+exportButton.addEventListener("click", function () {
+
+    html2canvas(poster, {
+        dpi: 600,
+        onrendered: function (canvas) {
+
+            canvas.toBlob(function (blob) {
+                saveAs(blob, "poster.png");
+            });
+
+        }
+    });
+})

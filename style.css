@@ -262,9 +262,10 @@ input[type=submit]:focus {
 }
 
 /* Poster styling */
-div.poster {
+.poster {
   width: 600px;
   height: 90vh;
+  background-color: white;
   padding-top: 18px;
   padding-bottom: 18px;
   padding-right: 18px;

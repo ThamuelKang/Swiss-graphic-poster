@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="font.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swiss Graphic Design</title>
+
 </head>
 
 <body>
@@ -196,7 +198,7 @@
 
     </aside>
 
-    <input class="export" type="submit" value="Export Poster">
+    <input class="export" target="_blank" type="submit" value="Export Poster">
 
 
 
@@ -206,7 +208,6 @@
 
     <div class="output">
         <div class="poster">
-
             <textarea name="header" class="header">Generate a good-looking poster!</textarea>
 
             <textarea class="body">Click and type areas you want!</textarea>
@@ -227,7 +228,7 @@
 
 </section>
 
-
+<script src="html2canvas.js"></script>
 <script src="index.js"></script>
 
 </html>
