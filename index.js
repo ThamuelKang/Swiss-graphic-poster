@@ -179,7 +179,7 @@ function sliderChecked() {
 }
 
 
-//html2canvas
+//html2canvas 
 
 exportButton.addEventListener("click", function () {
 
